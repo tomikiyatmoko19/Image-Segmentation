@@ -1,0 +1,15 @@
+%A=imread('F:\New folder (6)\data uji\versi jpg\grtr\im0319.ah.jpg');
+%B=imread('F:\New folder (6)\data uji\versi jpg\grtr\im0319.ah.jpg');
+A=imread('F:\New folder (6)\data uji\versi jpg\grtr\STARE\im0004.ah.jpg');
+B=imread('F:\New folder (6)\data uji\versi jpg\sauvola jp\STARE\im0004.jpg');
+%A=imread('C:\Users\Reimu\Downloads\PSNR-example-base.jpg');
+%B=imread('C:\Users\Reimu\Downloads\PSNR-example-comp-90.jpg');
+InputImage = A;
+ReconstructedImage = B;
+n=size(InputImage);
+M=n(1);
+N=n(1);
+MSE = sum(sum((InputImage-ReconstructedImage).^2))/(M*N);
+PSNR = 10*log10(255*255/MSE);
+%fprintf('\nMSE: %7.2f ', MSE);
+fprintf('\nPSNR: %1.7f dB', PSNR);
